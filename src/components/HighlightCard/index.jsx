@@ -31,9 +31,11 @@ const highlight = {
 
 const HighlightCard = () => {
   return (
-    <div className="bg-secondary pt-12 pb-4 px-8">
-      <h3>{highlight.title}</h3>
-      <p>{highlight.description}</p>
+    <div className="bg-secondary text-white pt-12 pb-4 px-8">
+      <h3 className="text-2xl leading-8 font-semibold mb-5">
+        {highlight.title}
+      </h3>
+      <p className="">{highlight.description}</p>
       <div>
         <div>
           <span>Client</span>

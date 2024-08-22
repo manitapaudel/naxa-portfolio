@@ -7,6 +7,9 @@ export default {
         primary: "#ffdc1c",
         secondary: "#124af4",
       },
+      fontSize: {
+        15: "15px",
+      },
     },
   },
   plugins: [],
