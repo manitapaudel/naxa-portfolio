@@ -8,7 +8,12 @@ export default {
         secondary: "#124af4",
       },
       fontSize: {
+        13: "13px",
         15: "15px",
+      },
+      spacing: {
+        100: "400px",
+        155: "620px",
       },
     },
   },

@@ -1,48 +1,33 @@
-const highlight = {
-  id: 20,
-  category_title: [
-    "Open Data Initiatives",
-    "Software & Application Development",
-  ],
-  category_description: [
-    "<p>We prioritize the generation and use of Open data, particularly open spatial data through platforms like OpenStreetMaps.We have worked on a number of open mapping data initiatives through our own in house investment and also in partnership with other organizations.</p>",
-    "<p>We develop software solutions both web and mobile applications across a wide range of thematic sectors.</p>",
-  ],
-  focus_area: [],
-  photo: "https://admin.naxa.com.np/media/pics/innov.png",
-  title: "National Innovation Digital Network",
-  subtitle:
-    "An open data initiative to Identify, Map, and Disseminate information regarding innovators and their innovation in Nepal and beyond.",
-  clients:
-    "A partnership initiative with Robotics Association of Nepal for NAST Nepal",
-  start_date: "2020-05-01",
-  end_date: "2020-07-30",
-  description:
-    "<p>National Innovation Digital Network (NIDN) is a noble initiative to identify, map, and disseminate information regarding innovators and their innovation in Nepal and beyond. This initiative aims to serve as a platform for the innovators to share their innovative works along with details such as the nature of their innovations, its current status in terms of implementation, types of support they need to scale up, contact details and many more. The project team at NAXA worked as a technical partner for Robotics Association of Nepal (RAN) and has been supporting Nepal Academy of Science and Technology (NAST) in the development and implementation and NIDN. The technical team provided the following services::</p>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Conceptualized and designed the web pages for the National Innovation digital network.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Designed and developed a web-based digital data collection form to collect data on innovators and their works.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Developed a web mapping interface where people could add details about their new initiatives and also visualize the details shared by several individuals and organizations.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Developed an analytical platform where users can filter, query and visualize innovations around Nepal under different thematic categories.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Actively reached out to individuals, groups of individuals, private and non-government organizations to collect details regarding their initiatives during Covid-19 pandemic.</p>\r\n\t</li>\r\n</ul>",
-  is_key_highlight: true,
-  project_order: 6,
-  created_at: "2020-12-16T12:19:56.356459+05:45",
-  updated_at: "2021-01-08T11:33:27.948618+05:45",
-  ongoing: false,
-  project_url: null,
-  is_international_projects: false,
-  category: [9, 3],
-};
-
-const HighlightCard = () => {
+const HighlightCard = ({ highlight }) => {
   return (
-    <div className="bg-secondary text-white pt-12 pb-4 px-8">
-      <h3 className="text-2xl leading-8 font-semibold mb-5">
-        {highlight.title}
-      </h3>
-      <p className="">{highlight.description}</p>
-      <div>
-        <div>
-          <span>Client</span>
-          <span>{highlight.clients}</span>
+    <div className="bg-secondary text-white max-w-155 cursor-pointer transition-all ease-in-out hover:delay-200 hover:shadow-2xl hover:-translate-y-2.5">
+      <div className=" pt-12 pb-4 px-8">
+        <h3 className="text-2xl leading-8 font-semibold mb-5">
+          {highlight.title}
+        </h3>
+        <p className="text-15 leading-6">{highlight.subtitle}</p>
+        <div className="grid grid-cols-12 gap-10 mt-6 mb-4">
+          <div className="col-span-6 px-2">
+            <h5 className="text-primary text-13 font-semibold mb-0.5">
+              Client
+            </h5>
+            <h6 className="text-13 font-semibold mb-0.5">
+              {highlight.clients}
+            </h6>
+          </div>
+          <div className="col-span-6 px-2">
+            <h5 className="text-primary text-13 font-semibold mb-0.5">
+              Time Duration
+            </h5>
+            <h6 className="text-13 font-semibold mb-0.5">
+              {highlight.start_date} {highlight.end_date}
+            </h6>
+          </div>
         </div>
-        <div></div>
       </div>
+      <figure className="w-full h-100">
+        <img src={highlight.photo} alt={highlight.title} />
+      </figure>
     </div>
   );
 };

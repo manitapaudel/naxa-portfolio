@@ -1,10 +1,9 @@
-import HighlightCard from "@/components/HighlightCard";
+import Projects from "@/views/projects";
 
 function App() {
   return (
     <div className="">
-      Hello there!
-      <HighlightCard />
+      <Projects />
     </div>
   );
 }
