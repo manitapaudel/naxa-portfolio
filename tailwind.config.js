@@ -2,6 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    container: {
+      padding: {
+        DEFAULT: "1rem",
+        sm: "2rem",
+        lg: "4rem",
+        xl: "5rem",
+        "2xl": "6rem",
+      },
+    },
     extend: {
       colors: {
         primary: "#ffdc1c",
@@ -11,6 +20,8 @@ export default {
       fontSize: {
         13: "13px",
         15: "15px",
+        17: "17px",
+        56: "56px",
       },
       spacing: {
         3.75: "15px",

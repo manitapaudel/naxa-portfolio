@@ -55,13 +55,30 @@ const Projects = () => {
   const onClose = () => {
     setShowFormModal(false);
   };
+
   return (
     <>
-      <div>
-        <PrimaryButton onClick={() => setShowFormModal(true)}>
-          User Form
-        </PrimaryButton>
-        <div className="py-20">
+      <div className="">
+        <div className="bg-gray-200 bg-opacity-40 py-20">
+          <div className="container mx-auto">
+            <nav className="flex justify-between">
+              <PrimaryButton>View Maps</PrimaryButton>
+              <PrimaryButton onClick={() => setShowFormModal(true)}>
+                User Form
+              </PrimaryButton>
+            </nav>
+            <div className="container mx-auto">
+              <h6 className="uppercase text-buttonHover text-center text-17 font-semibold">
+                Portfolio
+              </h6>
+              <h1 className="w-2/3 mx-auto text-center text-56">
+                Diverse, <span className="text-secondary">Impactful</span>, and
+                Reliable.
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div className="container mx-auto py-20">
           <HighlightCard highlight={highlight} />
         </div>
       </div>
