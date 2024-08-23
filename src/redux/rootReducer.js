@@ -1,5 +1,5 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import projectsReducer from "@/views/projects/slice";
+import projectsReducer from "@/views/portfolio/slice";
 
 const rootReducer = combineReducers({
   projects: projectsReducer,

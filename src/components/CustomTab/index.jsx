@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import HighlightCard from "@/components/HighlightCard";
 
 const highlight = {
@@ -35,7 +37,12 @@ const CustomTab = () => {
   return (
     <div className="container mx-auto  ">
       <div className="bg-white py-2.5 px-7.5 -mt-12 shadow-2xl">
-        Key Highlights
+        <Link
+          to="/keyhighlights"
+          className="bg-primary text-secondary font-semibold p-2"
+        >
+          Key Highlights
+        </Link>
       </div>
       <div className="mt-25">
         <HighlightCard highlight={highlight} />
