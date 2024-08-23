@@ -2,7 +2,7 @@ import Projects from "@/views/projects";
 
 function App() {
   return (
-    <div className="">
+    <div className="relative">
       <Projects />
     </div>
   );

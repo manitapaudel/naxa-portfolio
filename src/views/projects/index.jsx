@@ -1,7 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import HighlightCard from "@/components/HighlightCard";
-import { useDispatch, useSelector } from "react-redux";
+import PrimaryButton from "@/components/PrimaryButton";
+import Modal from "@/components/Modal";
+import UserForm from "@/components/UserForm";
 import { fetchProjectsRequest } from "./slice";
 
 const highlight = {
@@ -36,6 +39,8 @@ const highlight = {
 };
 
 const Projects = () => {
+  // state to handle the visibility of the modal
+  const [showFormModal, setShowFormModal] = useState(true);
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state.projects);
 
@@ -46,12 +51,28 @@ const Projects = () => {
   console.log({ loading });
   console.log({ error });
   console.log({ data });
+
+  const onClose = () => {
+    setShowFormModal(false);
+  };
   return (
-    <div>
-      {" "}
-      Hello there!
-      <HighlightCard highlight={highlight} />
-    </div>
+    <>
+      <div>
+        <PrimaryButton onClick={() => setShowFormModal(true)}>
+          User Form
+        </PrimaryButton>
+        <div className="py-20">
+          <HighlightCard highlight={highlight} />
+        </div>
+      </div>
+      {showFormModal ? (
+        <Modal onClose={onClose}>
+          <UserForm />
+        </Modal>
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         primary: "#ffdc1c",
+        buttonHover: "#ffab00",
         secondary: "#124af4",
       },
       fontSize: {
@@ -12,6 +13,8 @@ export default {
         15: "15px",
       },
       spacing: {
+        3.75: "15px",
+        8.25: "33px",
         100: "400px",
         155: "620px",
       },
