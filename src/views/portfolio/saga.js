@@ -5,18 +5,20 @@ import {
   fetchProjectsSuccess,
 } from "./slice";
 
-function fetchApiData() {
-  return fetch("https://admin.naxa.com.np/api/projects")
-    .then((response) => response.json())
-    .catch((error) => {
-      throw error;
-    });
-}
+const PROJECTS_URL = "https://admin.naxa.com.np/api/projects";
+
+const fetchProjects = async () => {
+  const response = await fetch(PROJECTS_URL);
+  if (!response.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return response.json();
+};
 
 // Worker saga
 function* fetchDataSaga() {
   try {
-    const data = yield call(fetchApiData);
+    const data = yield call(fetchProjects);
     yield put(fetchProjectsSuccess(data)); // Dispatch success action
   } catch (error) {
     yield put(fetchProjectsFailure(error.message)); // Dispatch failure action

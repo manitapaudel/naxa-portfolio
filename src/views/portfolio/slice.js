@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { extractUniqueCategories } from "../../utils";
 
 const initialState = {
   data: [],
+  uniqueCategories: [],
   loading: false,
   error: null,
 };
@@ -16,6 +18,7 @@ const projectsSlice = createSlice({
     fetchProjectsSuccess(state, action) {
       state.loading = false;
       state.data = action.payload;
+      state.uniqueCategories = extractUniqueCategories(action.payload);
     },
     fetchProjectsFailure(state, action) {
       state.loading = false;
