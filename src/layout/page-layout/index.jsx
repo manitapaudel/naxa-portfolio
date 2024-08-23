@@ -1,5 +1,6 @@
-import CustomTab from "@/components/CustomTab";
 import { Outlet } from "react-router-dom";
+
+import CustomTab from "@/components/CustomTab";
 
 const PageLayout = () => {
   return (
