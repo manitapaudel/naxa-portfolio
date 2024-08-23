@@ -25,6 +25,7 @@ export default {
       },
       spacing: {
         3.75: "15px",
+        6.25: "25px",
         7.5: "30px",
         8.25: "33px",
         25: "100px",

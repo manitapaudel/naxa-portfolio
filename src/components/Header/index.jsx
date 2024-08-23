@@ -20,8 +20,8 @@ const Header = () => {
               User Form
             </PrimaryButton>
           </nav>
-          <div className="container mx-auto py-16">
-            <h6 className="uppercase text-buttonHover text-center text-17 font-semibold">
+          <div className="container mx-auto py-10">
+            <h6 className="uppercase text-buttonHover text-center text-17 font-semibold mb-6.25">
               Portfolio
             </h6>
             <h1 className="w-2/3 mx-auto text-center text-56">
