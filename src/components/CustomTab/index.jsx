@@ -20,7 +20,7 @@ const CustomTab = ({ children }) => {
       <div className="grid grid-cols-5 gap-x-10 items-center bg-white py-2.5 px-7.5 -mt-12 shadow-2xl">
         <Link
           to="keyhighlights"
-          className={`max-h-max hover:bg-primary font-semibold p-2 ${
+          className={`max-h-max hover:bg-primary hover:text-secondary font-semibold p-2 ${
             location.pathname === "/keyhighlights"
               ? "bg-primary text-secondary"
               : "text-gray-400"
@@ -34,7 +34,7 @@ const CustomTab = ({ children }) => {
           return (
             <Link
               to={categoryPathname}
-              className={`hover:bg-primary font-semibold p-2 ${
+              className={`hover:bg-primary hover:text-secondary font-semibold p-2 ${
                 location.pathname === categoryPathname
                   ? "bg-primary text-secondary"
                   : "text-gray-400"
