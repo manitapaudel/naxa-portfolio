@@ -1,4 +1,8 @@
+import { useEffect } from "react";
+
 import HighlightCard from "@/components/HighlightCard";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProjectsRequest } from "./slice";
 
 const highlight = {
   id: 20,
@@ -32,6 +36,16 @@ const highlight = {
 };
 
 const Projects = () => {
+  const dispatch = useDispatch();
+  const { data, loading, error } = useSelector((state) => state.projects);
+
+  useEffect(() => {
+    dispatch(fetchProjectsRequest());
+  }, [dispatch]);
+
+  console.log({ loading });
+  console.log({ error });
+  console.log({ data });
   return (
     <div>
       {" "}
