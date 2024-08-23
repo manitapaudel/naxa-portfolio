@@ -91,9 +91,12 @@ const UserForm = () => {
     return isValid;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     // Let's validate the form inputs, before we get to submit them
-    if (validateInputs()) {
+    const isValid = validateInputs();
+    console.log("Let's see", validateInputs());
+    if (isValid) {
       alert(JSON.stringify(inputValues));
       console.log({ inputValues });
     }
@@ -103,7 +106,7 @@ const UserForm = () => {
     <div className="bg-white w-1/2 py-8 px-6 rounded">
       <h2 className="text-2xl font-semibold mb-3.75">Let&apos;s talk!</h2>
       <p>Want to join our team? Please fill up your details and submit.</p>
-      <form className="mt-6">
+      <form className="mt-6" onSubmit={handleSubmit}>
         <div className="mb-4">
           <InputField
             label="Name"
@@ -154,7 +157,7 @@ const UserForm = () => {
           </span>
         </div>
 
-        <PrimaryButton onClick={handleSubmit}>Apply now</PrimaryButton>
+        <PrimaryButton type="submit">Apply now</PrimaryButton>
       </form>
     </div>
   );

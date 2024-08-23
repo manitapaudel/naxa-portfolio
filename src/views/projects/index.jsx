@@ -40,7 +40,7 @@ const highlight = {
 
 const Projects = () => {
   // state to handle the visibility of the modal
-  const [showFormModal, setShowFormModal] = useState(true);
+  const [showFormModal, setShowFormModal] = useState(false);
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state.projects);
 

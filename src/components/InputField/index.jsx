@@ -8,7 +8,7 @@ const InputField = ({
   ...rest
 }) => {
   return (
-    <span className="flex flex-col mb-5">
+    <span className="relative flex flex-col mb-5">
       <label className="uppercase text-sm font-semibold mb-2.5" htmlFor={name}>
         {label}
         <span className="text-red-500 ml-1">{required && "*"}</span>
@@ -24,7 +24,9 @@ const InputField = ({
         value={value}
         {...rest}
       />
-      <p className="text-red-500 text-sm font-medium mt-1">{error && error}</p>
+      <p className="absolute -bottom-4 text-red-500 text-xs font-medium mt-1">
+        {error && error}
+      </p>
     </span>
   );
 };
