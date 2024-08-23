@@ -5,6 +5,7 @@ const Modal = ({ children, onClose }) => {
       <button
         className="absolute top-0 right-8 text-white hover:text-primary text-4xl"
         onClick={onClose}
+        title="Close modal"
       >
         &times;
       </button>

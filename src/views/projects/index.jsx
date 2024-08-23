@@ -67,7 +67,7 @@ const Projects = () => {
       </div>
       {showFormModal ? (
         <Modal onClose={onClose}>
-          <UserForm />
+          <UserForm onClose={onClose} />
         </Modal>
       ) : (
         <></>

@@ -12,9 +12,9 @@ const initialState = {
   cv: null,
 };
 
-const UserForm = () => {
+const UserForm = ({ onClose }) => {
   const [inputValues, setInputValues] = useState(initialState);
-  const [errors, setErrors] = useState(initialState); // Errors that may arise during form validation
+  const [errors, setErrors] = useState({ ...initialState, photo: "", cv: "" }); // Errors that may arise during form validation
 
   // To validate the email
   const validateEmail = (email) => {
@@ -61,7 +61,7 @@ const UserForm = () => {
     let isValid = true;
     const { name, address, email, contact, photo, cv } = inputValues;
 
-    const errorCopy = initialState;
+    const errorCopy = { ...initialState, photo: "", cv: "" };
 
     if (!name.trim()) {
       errorCopy.name = "Please enter a name";
@@ -95,9 +95,9 @@ const UserForm = () => {
     e.preventDefault();
     // Let's validate the form inputs, before we get to submit them
     const isValid = validateInputs();
-    console.log("Let's see", validateInputs());
     if (isValid) {
-      alert(JSON.stringify(inputValues));
+      onClose();
+      alert("form submitted successfully!");
       console.log({ inputValues });
     }
   };
