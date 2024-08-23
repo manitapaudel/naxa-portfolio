@@ -4,14 +4,14 @@ const InputField = ({
   value,
   name,
   error = "",
-  required = false,
+  required = true,
   ...rest
 }) => {
   return (
     <span className="flex flex-col mb-5">
       <label className="uppercase text-sm font-semibold mb-2.5" htmlFor={name}>
-        {required && "*"}
         {label}
+        <span className="text-red-500 ml-1">{required && "*"}</span>
       </label>
       <input
         id={name}
@@ -24,7 +24,7 @@ const InputField = ({
         value={value}
         {...rest}
       />
-      <p className="text-red-700">{error && error}</p>
+      <p className="text-red-500 text-sm font-medium mt-1">{error && error}</p>
     </span>
   );
 };
