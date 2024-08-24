@@ -1,6 +1,9 @@
 const HighlightCard = ({ highlight }) => {
   return (
-    <div className="bg-secondary text-white max-w-155 cursor-pointer transition-all ease-in-out hover:delay-200 hover:shadow-2xl hover:-translate-y-2.5 mt-24">
+    <div
+      className="bg-secondary text-white max-w-155 cursor-pointer transition-all ease-in-out hover:delay-200 hover:shadow-2xl hover:-translate-y-2.5 mt-24"
+      data-id={highlight.id}
+    >
       <div className=" pt-12 pb-4 px-8">
         <h3 className="text-2xl leading-8 font-semibold mb-5">
           {highlight.title}

@@ -5,3 +5,30 @@
 :root {
   font-family: "Montserrat", sans-serif;
 }
+
+/* I thought the cards needed a bit of variety in terms of colors, as in the original page */
+
+div[data-id="19"] {
+  color: #333;
+  background-color: #efefef;
+}
+div[data-id="20"] {
+  background-color: #333;
+}
+div[data-id="21"] {
+  color: #333;
+  background-color: #f8e1e5;
+}
+div[data-id="24"] {
+  background-color: #b30732;
+}
+div[data-id="25"] {
+  background-color: #25a596;
+}
+div[data-id="73"] {
+  background-color: #1281ad;
+}
+div[data-id="101"] {
+  color: #333;
+  background-color: #efefef;
+}
