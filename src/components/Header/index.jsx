@@ -3,19 +3,27 @@ import { useState } from "react";
 import PrimaryButton from "@/components/PrimaryButton";
 import Modal from "@/components/Modal";
 import UserForm from "@/components/UserForm";
+import MapComponent from "@/components/MapComponent";
 
 const Header = () => {
   // state to handle the visibility of the modal
   const [showFormModal, setShowFormModal] = useState(false);
-  const onClose = () => {
+  const [showMapModal, setShowMapModal] = useState(false);
+  const onFormClose = () => {
     setShowFormModal(false);
+  };
+
+  const onMapClose = () => {
+    setShowMapModal(false);
   };
   return (
     <>
       <div className="bg-gray-200 bg-opacity-40 py-20">
         <div className="container mx-auto">
           <nav className="flex justify-between">
-            <PrimaryButton>View Maps</PrimaryButton>
+            <PrimaryButton onClick={() => setShowMapModal(true)}>
+              View Maps
+            </PrimaryButton>
             <PrimaryButton onClick={() => setShowFormModal(true)}>
               User Form
             </PrimaryButton>
@@ -32,8 +40,15 @@ const Header = () => {
         </div>
       </div>
       {showFormModal ? (
-        <Modal onClose={onClose}>
-          <UserForm onClose={onClose} />
+        <Modal onClose={onFormClose}>
+          <UserForm onClose={onFormClose} />
+        </Modal>
+      ) : (
+        <></>
+      )}
+      {showMapModal ? (
+        <Modal onClose={onMapClose}>
+          <MapComponent />
         </Modal>
       ) : (
         <></>
