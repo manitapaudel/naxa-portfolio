@@ -6,6 +6,23 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.highlight-description p {
+  margin-bottom: 20px;
+}
+
+.highlight-description ul {
+  padding-left: 40px;
+}
+.highlight-description li::before {
+  content: url("/check-circle-fill.svg");
+  color: #ffdc1c;
+  width: 20px;
+  height: 20px;
+}
+.highlight-description li {
+  display: flex;
+  gap: 20px;
+}
 /* I thought the cards needed a bit of variety in terms of colors, as in the original page */
 
 div[data-id="19"] {
