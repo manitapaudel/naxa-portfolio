@@ -51,15 +51,15 @@ div[data-id="101"] {
   background-color: #efefef;
 }
 
-*::-webkit-scrollbar {
+.highlight-details::-webkit-scrollbar {
   width: 4px;
 }
 
-*::-webkit-scrollbar-track {
+.highlight-details::-webkit-scrollbar-track {
   background: #e2e8f0;
 }
 
-*::-webkit-scrollbar-thumb {
+.highlight-details::-webkit-scrollbar-thumb {
   background-color: #94a3b8;
   border-radius: 20px;
 }
