@@ -24,7 +24,7 @@ const HighlightCard = ({ highlight }) => {
           <p className="text-15 leading-6">{highlight.subtitle}</p>
           <div className="grid grid-cols-12 gap-10 mt-6 mb-4">
             <div className="col-span-6 px-2">
-              <h5 className="text-primary text-13 font-semibold mb-0.5">
+              <h5 className="text-buttonHover text-13 font-semibold mb-0.5">
                 Client
               </h5>
               <h6 className="text-13 font-semibold mb-0.5">
@@ -32,7 +32,7 @@ const HighlightCard = ({ highlight }) => {
               </h6>
             </div>
             <div className="col-span-6 px-2">
-              <h5 className="text-primary text-13 font-semibold mb-0.5">
+              <h5 className="text-buttonHover text-13 font-semibold mb-0.5">
                 Time Duration
               </h5>
               <h6 className="text-13 font-semibold mb-0.5">
