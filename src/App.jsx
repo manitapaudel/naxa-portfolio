@@ -1,20 +1,21 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Category from "@/views/category";
-import Portfolio from "@/views/portfolio";
 import KeyHighlights from "@/views/key-highlights";
-import Header from "@/components/Header";
-import PageLayout from "./layout/page-layout";
+import PortfolioLayout from "./layout/portfolio-layout";
+import RootLayout from "./layout/root-layout";
+import Portfolio from "@/views/portfolio";
 
 function App() {
   return (
     <Router>
-      <Header />
       <Routes>
-        <Route path="/" element={<Portfolio />} />
-        <Route element={<PageLayout />}>
-          <Route path="/keyhighlights" element={<KeyHighlights />} />
-          <Route path=":category" element={<Category />} />
+        <Route path="/" element={<RootLayout />}>
+          <Route index element={<Portfolio />} />
+          <Route path="portfolio" element={<PortfolioLayout />}>
+            <Route path="keyhighlights" element={<KeyHighlights />} />
+            <Route path=":category" element={<Category />} />
+          </Route>
         </Route>
       </Routes>
     </Router>

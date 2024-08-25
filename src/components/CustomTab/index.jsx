@@ -7,6 +7,7 @@ import { createCategoryPathname } from "../../utils";
 
 const CustomTab = ({ children }) => {
   const location = useLocation();
+  console.log(location);
 
   const dispatch = useDispatch();
   const { uniqueCategories } = useSelector((state) => state.projects);
@@ -21,7 +22,7 @@ const CustomTab = ({ children }) => {
         <Link
           to="keyhighlights"
           className={`max-h-max hover:bg-primary hover:text-secondary font-semibold p-2 ${
-            location.pathname === "/keyhighlights"
+            location.pathname === "/portfolio/keyhighlights"
               ? "bg-primary text-secondary"
               : "text-gray-400"
           }
@@ -30,7 +31,9 @@ const CustomTab = ({ children }) => {
           Key Highlights
         </Link>
         {uniqueCategories.map((category) => {
-          const categoryPathname = `/${createCategoryPathname(category)}`;
+          const categoryPathname = `/portfolio/${createCategoryPathname(
+            category
+          )}`;
           return (
             <Link
               to={categoryPathname}

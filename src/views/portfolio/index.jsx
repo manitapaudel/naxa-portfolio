@@ -7,7 +7,7 @@ const Portfolio = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate("/keyhighlights");
+    navigate("/portfolio/keyhighlights");
   });
 
   return (
