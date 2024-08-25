@@ -20,7 +20,7 @@ const InputField = ({
         placeholder={label}
         className={`placeholder:text-gray-800 text-sm ${
           type !== "file" ? "bg-gray-200 py-2.5 pl-4 pr-8.25" : ""
-        }`}
+        } ${type !== "file" && error ? "border border-2 border-red-500" : ""}`}
         value={value}
         {...rest}
       />
