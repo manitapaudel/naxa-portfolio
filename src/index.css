@@ -5,6 +5,7 @@
 :root {
   font-family: "Montserrat", sans-serif;
 }
+/* for the description section that needs to be parsed */
 
 .highlight-description p {
   margin-bottom: 20px;
@@ -48,4 +49,17 @@ div[data-id="73"] {
 div[data-id="101"] {
   color: #333;
   background-color: #efefef;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #94a3b8;
+  border-radius: 20px;
 }
