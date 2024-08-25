@@ -2,17 +2,21 @@ import parse from "html-react-parser";
 
 const HighlightDetails = ({ highlight }) => {
   return (
-    <div className="bg-white w-4/5 max-h-[70vh] overflow-y-scroll">
-      <div className="flex items-center">
+    <div className="bg-white w-2/3 max-h-[70vh] overflow-y-scroll">
+      <div className="flex">
         <figure className="w-1/3">
-          <img src={highlight.photo} alt={highlight.title} />
+          <img
+            src={highlight.photo}
+            alt={highlight.title}
+            className="min-w-83 min-h-75"
+          />
         </figure>
         <div className=" pt-12 pb-4 px-8">
           <h3 className="text-2xl leading-8 font-semibold mb-5">
             {highlight.title}
           </h3>
           <p className="text-15 leading-6">{highlight.subtitle}</p>
-          <div className="grid grid-cols-12 gap-10 mt-6 mb-4">
+          <div className="grid grid-cols-12 gap-x-10 gap-y-4 mt-6">
             <div className="col-span-6 px-2">
               <h5 className="text-buttonHover text-13 font-semibold mb-0.5">
                 Client
