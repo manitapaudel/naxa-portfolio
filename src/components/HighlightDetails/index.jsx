@@ -2,7 +2,7 @@ import parse from "html-react-parser";
 
 const HighlightDetails = ({ highlight }) => {
   return (
-    <div className="highlight-details bg-white w-2/3 max-h-[85vh] overflow-y-scroll">
+    <div className="highlight-details bg-white w-2/3 max-h-[85vh] overflow-y-scroll z-99">
       <div className="flex">
         <figure className="w-1/3">
           <img
