@@ -34,6 +34,14 @@ const UserForm = ({ onClose }) => {
       }));
       if (value !== null)
         setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
+    } else if (type === "tel") {
+      const numericValue = value.replace(/[^0-9]/g, ""); // to make sure the user only inputs number
+      setInputValues((prevState) => ({
+        ...prevState,
+        [name]: numericValue,
+      }));
+      if (value !== "")
+        setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
     } else {
       if (value !== "")
         setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
@@ -43,7 +51,7 @@ const UserForm = ({ onClose }) => {
         [name]: value,
       }));
 
-      //   Validating the email input while user is typing
+      //   validating the email input while user is typing
       if (type === "email") {
         if (validateEmail(value)) {
           setErrors((prevErrors) => ({ ...prevErrors, email: "" })); // Clear error if user updates the email according to the required format
@@ -93,7 +101,7 @@ const UserForm = ({ onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Let's validate the form inputs, before we get to submit them
+    // let's validate the form inputs, before we get to submit them
     const isValid = validateInputs();
     if (isValid) {
       onClose();
@@ -133,6 +141,7 @@ const UserForm = ({ onClose }) => {
           <InputField
             label="Contact"
             name="contact"
+            type="tel"
             value={inputValues.contact}
             onChange={handleChange}
             error={errors.contact}
